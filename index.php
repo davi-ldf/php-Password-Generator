@@ -19,24 +19,25 @@ if(isset($_POST['length'])) {
     $password = "";
 
     $valid_options = "";
-    if($lowercase) {
+    if( $lowercase) {
         $valid_options .= $lowercase_chars;
     }
 
-    if($uppercase) {
+    if ($uppercase) {
         $valid_options .= $uppercase_chars;
     }
 
-    if($symbols) {
+    if ($symbols) {
         $valid_options .= $symbols_chars;
     }
 
-    if($numbers) {
+    if ($numbers) {
         $valid_options .= $numbers_chars;
     }
 
     for($k = 0; $k < $length; $k++) {
-        
+        $random_number = rand(0, strlen($valid_options) - 1);
+        $password .= $valid_options[$random_number];
     }
 }
 
@@ -50,8 +51,11 @@ if(isset($_POST['length'])) {
     <title>Password Generator</title>
 </head>
 <body>
-    <h4>Generated Password</h4>
-    <input type="text" readonly value="novaSenha">
+    <?php if(isset($password)) { ?>
+        <h4>Generated Password</h4>
+        <input type="text" readonly value="<?php echo $password?>">
+    <?php } ?>
+
     <h4>Generate a Password</h4>
     <form method="post" action="">
         <p>
