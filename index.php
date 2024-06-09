@@ -1,6 +1,13 @@
 <?php 
 
-var_dump($_POST);
+if(isset($_POST['length'])) {
+    $length = intval($_POST['length']);
+    $lowercase = $_POST['lowercase'] == 1;
+    $uppercase = $_POST['uppercase'] == 1;
+    $symbols = $_POST['symbols'] == 1;
+    $numbers = $_POST['numbers'] == 1;
+}
+var_dump($numbers);
 
 ?>
 <!DOCTYPE html>
@@ -17,7 +24,7 @@ var_dump($_POST);
     <form method="post" action="">
         <p>
             <label for="">Password Length</label>
-            <input type="number" value="16" name="length">
+            <input type="number" min="8" required value="16" name="length">
         </p>
         <p>
             <label for="">Include Lowercase</label>
