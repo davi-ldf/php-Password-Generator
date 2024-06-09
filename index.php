@@ -2,10 +2,10 @@
 
 if(isset($_POST['length'])) {
     $length = intval($_POST['length']);
-    $lowercase = $_POST['lowercase'] == 1;
-    $uppercase = $_POST['uppercase'] == 1;
-    $symbols = $_POST['symbols'] == 1;
-    $numbers = $_POST['numbers'] == 1;
+    $lowercase = isset($_POST['lowercase']);
+    $uppercase = isset($_POST['uppercase']);
+    $symbols = isset($_POST['symbols']);
+    $numbers = isset($_POST['numbers']);
 }
 var_dump($numbers);
 
