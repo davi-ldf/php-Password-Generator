@@ -6,8 +6,15 @@ if(isset($_POST['length'])) {
     $uppercase = isset($_POST['uppercase']);
     $symbols = isset($_POST['symbols']);
     $numbers = isset($_POST['numbers']);
+
+    $lowercase_chars = "abcdefghijklmnopqrstuvwxyz";
+    $uppercase_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    $symbols_chars = "!@#$%&*()_+=";
+    $numbers_chars = "0123456789";
+
+    $password = "";
 }
-var_dump($numbers);
+
 
 ?>
 <!DOCTYPE html>
