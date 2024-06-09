@@ -7,12 +7,37 @@ if(isset($_POST['length'])) {
     $symbols = isset($_POST['symbols']);
     $numbers = isset($_POST['numbers']);
 
+    if(!$lowercase && !$uppercase && !$symbols && !$numbers) {
+        echo "Failed to generate password. Choose at least 1 type.";
+    }
+    
     $lowercase_chars = "abcdefghijklmnopqrstuvwxyz";
     $uppercase_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     $symbols_chars = "!@#$%&*()_+=";
     $numbers_chars = "0123456789";
 
     $password = "";
+
+    $valid_options = "";
+    if($lowercase) {
+        $valid_options .= $lowercase_chars;
+    }
+
+    if($uppercase) {
+        $valid_options .= $uppercase_chars;
+    }
+
+    if($symbols) {
+        $valid_options .= $symbols_chars;
+    }
+
+    if($numbers) {
+        $valid_options .= $numbers_chars;
+    }
+
+    for($k = 0; $k < $length; $k++) {
+        
+    }
 }
 
 
